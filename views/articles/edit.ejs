@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body style="background-image: url(https://images.all-free-download.com/images/graphiclarge/wood_background_hd_picture_5_169842.jpg);background-size: cover;background-repeat: no-repeat;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand" href="/" style="color:white">YELPBLOG</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/get" style="color:white">HOME <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/articles/new" style="color:white">CREATE YOUR BLOG</a>
+            </li>
+            
+          </ul>
+          
+        </div>
+      </nav>
+    <div class="container">
+       
+
+        <h1 class="mb-4" style="color:white;padding-top:30px;font-family:cooper">Edit Article</h1>
+        <form action="/articles/<%= article.id %>?_method=PUT" method="POST">
+            <div class="form-group" style="padding-top: 0px;">
+            <label for="title" style="color:whitesmoke; font-size:26px;font-family:georgia">Title</label>  
+            <textarea  name="title" id="title" class="form-control" style="color:black"><%= article.title %></textarea>
+          
+            </div>
+            <div class="form-group" style="padding-top: 0px;">
+            <label for="caption" style="color:whitesmoke; font-size:26px;font-family:georgia">Caption</label>  
+            <textarea  name="caption" id="caption" class="form-control" style="color:black"><%= article.caption %></textarea>
+            </div>
+            <div class="form-group" style="padding-top: 0px;">
+                <label for="description" style="color:whitesmoke; font-size:26px;font-family:georgia">Description</label>  
+            <textarea value="<%= article.description %>"  required name="description" id="description" class="form-control" style="color:black"><%= article.description %></textarea>
+
+            </div>
+
+            <a href="/get" class="btn btn-secondary" style="width: 100px;">Cancel</a>
+            <button type="submit" class="btn btn-success"  style="width: 100px;margin-left: 900px;">Save</button>
+
+
+
+        </form>
+    </div>
+    
+</body>
+</html>

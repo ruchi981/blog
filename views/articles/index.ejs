@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body style="background-image: url(https://i.pinimg.com/originals/cd/e9/3d/cde93d87aaa96edda5968823c6592b0b.jpg); margin-bottom:16px">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand" href="/" style="color:white">KYLEBLOG</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/get" style="color:white">HOME <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/articles/new" style="color:white">CREATE YOUR BLOG</a>
+            </li>
+            
+          </ul>
+          
+        </div>
+      </nav>
+      <div class="container">
+
+        <h1 class="mb-4" style="font-family:cooper; padding-left: 260px; padding-top:10px;color:white">Enjoy some beautiful articles</h1>
+        <a href="/articles/new" class="btn btn-primary" style="margin-left:420px;">Create Your Article</a>
+
+
+        <% articles.forEach(article=>{ %>
+            <div class="card mt-4" style="background-color:rgba(245, 245, 245, 0.911);">
+                <div class="card-body">
+                   
+                       <h3 class="card-title" style="font-family:sans-serif; font-size:20px;font-weight: bold;"><%= article.title %></h3>
+                       <div class="card-subtitle text-muted mb-2">
+                           <%= article.createdAt.toLocaleDateString() %>
+
+                       </div>
+                       <div class="card-text mb-4">
+                        <%= article.caption %>
+                       </div>
+
+                       <a href="/articles/<%= article.id %>" class="btn btn-dark">Read  More</a>
+
+                       <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                    </div>
+               
+            </div>
+            
+
+          
+
+        <%})%>
+    </div>
+    
+</body>
+</html>

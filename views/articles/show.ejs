@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body style="margin-bottom:8px;background-image: url(https://cdn.clipart.email/e05b36998539b5c211129e4cab70c2d1_royalty-free-wood-textures-clip-art-vector-images-illustrations-_612-612.jpeg);">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand" href="/" style="color:white">YELPBLOG</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/get" style="color:white">HOME <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/articles/new" style="color:white">CREATE YOUR BLOG</a>
+            </li>
+            
+          </ul>
+          
+        </div>
+      </nav>
+    <div class="container" style="padding-top: 40px;">
+       
+       
+        <h2 class="mb-1" style="font-weight: bold; font-family: cooper;color:rgba(245, 245, 245, 0.952); padding-top:25px; padding-left: 40px;"><%= article.title %></h2>
+        <div class="text-muted" style="color:white; padding-left: 40px"><%= article.createdAt.toLocaleDateString() %>
+       
+
+      <div style="margin-top:7px">
+        <a href="/get" class="btn btn-info " style="width: 130px; margin-left:1px">All Articles</a><span></span>
+        <a href="edit/<%= article.id %>" class="btn btn-secondary" style="width:130px; margin-left: 23px; margin-top:0px">Edit</a>
+      </div>
+        
+     <div class="card" style="padding-bottom:40px; margin-top:25px">
+        <div style=" padding-left: 20px; padding-top:20px ;">
+           <h5 style="font-family: Georgia; color:black"><%= article.description %></h5>
+        </div>
+        </div>
+       
+    </div>
+    </div>
+    
+</body>
+</html>
